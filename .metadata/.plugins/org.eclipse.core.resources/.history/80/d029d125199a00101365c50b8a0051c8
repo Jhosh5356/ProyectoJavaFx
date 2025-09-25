@@ -1,0 +1,10 @@
+package co.edu.poli.actividad3.model;
+
+public class MonedaGenerica {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

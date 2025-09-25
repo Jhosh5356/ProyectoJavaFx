@@ -1,0 +1,61 @@
+package co.edu.poli.actividad3.model;
+
+
+public class Conmemorativa extends Moneda {
+
+	@Override
+	public void mostrarInfo(String mensaje) {
+		return 
+		"««« Conmemorativa »»»" +  
+		"\n evento: " + evento + 
+		"\n año emisión: " + annyo_emision + 
+		"\n getEvento(): " + getEvento() + 
+		"\n getAnnyo_emision(): " + getAnnyo_emision() + "\n" + "\n";
+	}
+
+	
+	@Override
+    public Object devolverSuper() {
+        return this; // un objeto Conmemorativa también es un Object
+    }
+	
+	public String getEvento() {
+		return evento;
+	}
+
+	public void setEvento(String evento) {
+		this.evento = evento;
+	}
+
+	public int getAnnyo_emision() {
+		return annyo_emision;
+	}
+
+	public void setAnnyo_emision(int annyo_emision) {
+		this.annyo_emision = annyo_emision;
+	}
+
+
+	
+	public Conmemorativa(String id, double peso, Pais pais, Especificacion especificacion, Coleccion coleccion,
+			int annyo_creacion, Conservacion conservacion, Certificacion certificacion, int valor, String evento,
+			int annyo_emision) {
+		super(id, peso, pais, especificacion, coleccion, annyo_creacion, conservacion, certificacion, valor);
+		this.evento = evento;
+		this.annyo_emision = annyo_emision;
+	}
+
+	public Conmemorativa() {
+    }
+
+    /**
+     * 
+     */
+    private String evento;
+
+    /**
+     * 
+     */
+    private int annyo_emision;
+
+}

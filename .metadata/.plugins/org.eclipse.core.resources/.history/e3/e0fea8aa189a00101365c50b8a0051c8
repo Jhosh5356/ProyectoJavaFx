@@ -1,0 +1,58 @@
+package co.edu.poli.actividad3.model;
+
+
+public class Antigua extends Moneda {
+
+	public Antigua(String id, Pais pais, Especificacion especificacion, Coleccion coleccion, int annyo_creacion,
+			Conservacion conservacion, Certificacion certificacion, int valor, String epoca, int valor_historico) {
+		//super(id, pais, especificacion, coleccion, annyo_creacion, conservacion, certificacion, valor);
+		//this.epoca = epoca;
+		this.valor_historico = valor_historico;
+	}
+
+	public String getEpoca() {
+		return epoca;
+	}
+
+	public void setEpoca(String epoca) {
+		this.epoca = epoca;
+	}
+
+	public int getValor_historico() {
+		return valor_historico;
+	}
+
+	public void setValor_historico(int valor_historico) {
+		this.valor_historico = valor_historico;
+	}
+
+	
+
+	public Antigua() {
+    }
+
+    /**
+     * 
+     */
+    private String epoca;
+
+    /**
+     * 
+     */
+    private int valor_historico;
+
+	@Override
+	public String toString() {
+		return "««« Antigua »»»" +  
+		"\n epoca: " + epoca + 
+		"\n valor_historico: " + valor_historico + 
+		"\n toString: " + super.toString() + "\n" + "\n";
+	}
+    
+	@Override
+	public Object devolverSuper() {
+	    return this; //SUPERCLASE
+	}
+    
+
+}

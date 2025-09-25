@@ -1,0 +1,207 @@
+package co.edu.poli.actividad3.model;
+
+
+public abstract class Moneda {
+
+
+	public final String getId() {
+		return id;
+	}
+
+	public void setId(String id) {
+		this.id = id;
+	}
+
+	public double getPeso() {
+		return peso;
+	}
+
+	public void setPeso(double peso) {
+		this.peso = peso;
+	}
+
+	public Pais getPais() {
+		return pais;
+	}
+
+	public void setPais(Pais pais) {
+		this.pais = pais;
+	}
+
+	public Especificacion getEspecificacion() {
+		return especificacion;
+	}
+
+	public void setEspecificacion(Especificacion especificacion) {
+		this.especificacion = especificacion;
+	}
+
+	public Coleccion getColeccion() {
+		return coleccion;
+	}
+
+	public void setColeccion(Coleccion coleccion) {
+		this.coleccion = coleccion;
+	}
+
+	public int getAnnyo_creacion() {
+		return annyo_creacion;
+	}
+
+	public void setAnnyo_creacion(int annyo_creacion) {
+		this.annyo_creacion = annyo_creacion;
+	}
+
+	public Conservacion getConservacion() {
+		return conservacion;
+	}
+
+	public void setConservacion(Conservacion conservacion) {
+		this.conservacion = conservacion;
+	}
+
+	public Certificacion getCertificacion() {
+		return certificacion;
+	}
+
+	public void setCertificacion(Certificacion certificacion) {
+		this.certificacion = certificacion;
+	}
+
+	public int getValor() {
+		return valor;
+	}
+
+	public void setValor(int valor) {
+		this.valor = valor;
+	}
+
+	public Moneda(final String id, double peso, Pais pais, Especificacion especificacion, Coleccion coleccion,
+			int annyo_creacion, Conservacion conservacion, Certificacion certificacion, int valor) {
+		super();
+		this.id = id;
+		this.peso = peso;
+		this.pais = pais;
+		this.especificacion = especificacion;
+		this.coleccion = coleccion;
+		this.annyo_creacion = annyo_creacion;
+		this.conservacion = conservacion;
+		this.certificacion = certificacion;
+		this.valor = valor;
+	}
+
+	public Moneda(String id) {
+		this.id = id; 
+    }
+
+	
+	public abstract void mostrarInfo(String mensaje);   // Método con parámetro
+	public abstract Object devolverSuper();             // Método que retorna supersuperclase
+
+    /**
+     * 
+     */
+    private final String id;
+
+    /**
+     * 
+     */
+    public double peso;
+
+    /**
+     * 
+     */
+    private Pais pais;
+
+    /**
+     * 
+     */
+    private Especificacion especificacion;
+
+    /**
+     * 
+     */
+    private Coleccion coleccion;
+
+    /**
+     * 
+     */
+
+    private int annyo_creacion;
+
+    /**
+     * 
+     */
+    private Conservacion conservacion;
+
+    /**
+     * 
+     */
+    private Certificacion certificacion;
+
+    /**
+     * 
+     */
+    private int valor;
+    /**
+     * 
+     */
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+    @Override
+	public String toString() {
+		return 
+		"««« Moneda »»»" + 
+		"\n id: "+ id + 
+		"\n peso: " + peso + 
+		"\n pais: " + pais + 
+		"\n especificacion: " + especificacion + 
+		"\n coleccion: " + coleccion +
+		"\n año ceracion: " + annyo_creacion +
+		"\n conservacion: " + conservacion +
+		"\n certificacion: " + certificacion +
+		"\n valor: " + valor +
+		"\n getAnnyo_creacion(): " + getAnnyo_creacion() +
+		"\n " + "\n";
+	
+    
+    }
+
+	/**
+     * @return
+     */
+    public int determinarEdadActual(int annyoReferencia) {
+        return annyoReferencia - annyo_creacion;
+        
+    }
+
+    /**
+     * @param registro 
+     * @return
+     */
+    protected boolean registrar_moneda(boolean registro) {
+        // TODO implement here
+        return false;
+    }
+
+    /**
+     * @return
+     */
+    protected boolean registrar_moneda() {
+        // TODO implement here
+        return false;
+    }
+
+}

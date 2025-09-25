@@ -1,0 +1,131 @@
+package co.edu.poli.actividad3.vista;
+
+import co.edu.poli.actividad3.model.Moneda;
+//import co.edu.poli.actividad3.model.Coleccionista;
+import co.edu.poli.actividad3.model.Conservacion;
+import co.edu.poli.actividad3.model.Especificacion;
+import co.edu.poli.actividad3.model.Coleccion;
+//import co.edu.poli.actividad3.model.Id_catalogo;
+import co.edu.poli.actividad3.model.Pais;
+import co.edu.poli.actividad3.model.Certificacion;
+import co.edu.poli.actividad3.model.Conmemorativa;
+import co.edu.poli.actividad3.model.Tipo_divisa;
+import co.edu.poli.actividad3.model.Antigua;
+import co.edu.poli.actividad3.model.MonedaGenerica;
+
+
+
+public class Principal {
+	public static void main(String[] args) {
+		// TODO implement here
+
+		// Coleccionista coleccionista1 = new Coleccionista("COLIT7138", "El mago",
+		// "Argentino", "themagic48@gmail.com", "Calle 30 #45-36", "Poco común");
+		// Coleccionista coleccionista2 = new Coleccionista("COLIT7239", "Safiro",
+		// "Uruguayo", "elsafirico7@gmail.com", "Calle 330 #25-40", "Poco común");
+
+		// Coleccionista[] coleccionistas = new Coleccionista[2];
+		// coleccionistas[0]= coleccionista1;
+		// coleccionistas[1]= coleccionista2;
+
+		Conservacion Conservacion1 = new Conservacion("QRTUT48", true, false, "Antigua", "Perfecto", "Ninguna");
+
+		Especificacion Especificaciones = new Especificacion("EPOR392", 20.5, "Plata", 5.0, "Perfecto");
+
+		Coleccion Colecciones = new Coleccion("KDRU487", "Moneditas Doradas", "12 de diciembre del 2017", "Dorado");
+
+		// Id_catalogo id_catalogo1 = new Id_catalogo("Moneditas Doradas", 2015, "Time's
+		// Money", "Anual");
+
+		Pais pais1 = new Pais("URU79", "Americano", "Español", "Peso Uruguayo", "Uruguay");
+
+		Certificacion certificacion1 = new Certificacion("MON4735", 50, "Colombia", "Perfecta conservación",
+				"Banco de Moneda");
+
+		// Transaccion transaccion1 = new Transaccion("TRAFI123","16 de septiembre del
+		// 2019", "Bancario", "Juliana Vasquez", "Camilo Mendez", "Ninguna", 30.5,
+		// "Banco de la republica");
+
+		        
+		    
+    /**
+     * Moneda moneda1 = new MonedaGenerica("AIT456", 25.3, pais1, Especificaciones, Colecciones, 2013,
+		        Conservacion1, certificacion1, 10000);
+		
+     */    
+
+		Tipo_divisa tipodivisa1 = new Tipo_divisa("Euro", "978", "€", "España", 20, "septiembre 2025", true, 0);
+
+		Antigua monedaAntigua = new Antigua("ANT002", pais1, Especificaciones, Colecciones, 1800, Conservacion1,
+		        certificacion1, 3000, "Edad Contemporánea", 200000);
+
+		Conmemorativa conmemorati = new Conmemorativa("C002", 22.5, pais1, Especificaciones, Colecciones, 2015, Conservacion1,
+		        certificacion1, 50000, "Centenario de la Constitución", 2015);
+
+		
+		
+		
+		// ARREGLO DE SUPER CLASE
+		Moneda[] arr = new Moneda[5];
+
+		arr[0] = new Antigua("ANT001", pais1, Especificaciones, Colecciones, 1750, Conservacion1, certificacion1, 2000,
+				"Edad Moderna", 100000);
+
+		arr[1] = new Conmemorativa("C001", 20, pais1, Especificaciones, Colecciones, 2010, Conservacion1, certificacion1,
+				100000, "Bicentenario de la Independencia", 2010);
+
+		arr[2] = new Tipo_divisa("Euro", "978", "€", "España", 20, "septiembre 2025", true, 0);
+
+		System.out.println();
+		for (int i = 0; i < arr.length; i++) {
+			if (arr[i] != null) {
+				//System.out.println("Moneda ID: " + arr[i].getId());
+				//System.out.println("País: " + arr[i].getPais().getNombre());
+				//System.out.println("Colección: " + arr[i].getColeccion().getNombre());
+				//System.out.println("Valor: " + arr[i].getValor());
+			}
+		}
+		
+		
+		for (int i = 0; i < arr.length; i++) {
+		    if (arr[i] != null) {
+		        // Método con parámetro
+		        arr[i].mostrarInfo("Mostrando información desde polimorfismo.");
+
+		        // Método que retorna supersuperclase
+		        Object obj = arr[i].devolverSuper();
+		        System.out.println("Retornado como supersuperclase: " + obj.getClass().getSimpleName());
+		    }
+		}
+
+		// 1. Crear atributo que no se puede cambiar (final) en Moneda
+        Moneda m = new Moneda("USD", "Dólar");
+        System.out.println("Código (no se puede cambiar): " + m.getCodigo());
+        
+        // m.codigo = "EUR";   // ❌ Esto daría error, ya que es final
+        
+        // 2. Método que no se puede sobreescribir (getCodigo marcado como final)
+        System.out.println("El método getCodigo no puede ser sobreescrito en subclases.");
+        
+        // 3. Clase que no se puede heredar (Moneda declarada como final)
+        System.out.println("La clase Moneda no puede ser heredada.");
+        
+        // Uso normal de Certificacion
+        Certificacion c = new Certificacion("ISO", "Internacional");
+        System.out.println("Certificación: " + c.getEntidad() + " - " + c.getNivel());
+		
+
+		 System.out.println(moneda1);
+		// System.out.println(pais1);
+		// System.out.println(Especificaciones);
+		// System.out.println(id_catalogo1);
+		 System.out.println(conmemorati);
+		// System.out.println(coleccionista1);
+		// System.out.println(Conservacion1);
+		// System.out.println(transaccion1);
+		 System.out.println(tipodivisa1);
+		 System.out.println(monedaAntigua);
+
+	}
+
+}
