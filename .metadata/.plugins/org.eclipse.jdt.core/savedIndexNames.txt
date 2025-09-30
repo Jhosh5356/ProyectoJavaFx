@@ -1,4 +1,0 @@
-INDEX VERSION 1.134+C:\Users\Betzabeth\OneDrive\Escritorio\Paradigma_corte2\.metadata\.plugins\org.eclipse.jdt.core
-3131028607.index
-1288848795.index
-1865797976.index
