@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.paint.Color?>
+<?import javafx.scene.paint.LinearGradient?>
+<?import javafx.scene.paint.Stop?>
+<?import javafx.scene.text.Font?>
+
+<VBox alignment="CENTER" spacing="20.0" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="co.edu.poli.actividad9_.PrimaryController">
+   <children>
+      <Label text="Primary View">
+         <font>
+            <Font name="Century Gothic" size="18.0" />
+         </font>
+         <textFill>
+            <LinearGradient endX="0.966824644549763" endY="0.7867298578199052" startX="0.8862559241706162" startY="0.6540284360189573">
+               <stops>
+                  <Stop>
+                     <color>
+                        <Color red="0.42105263471603394" green="0.015594542026519775" blue="0.015594542026519775" />
+                     </color>
+                  </Stop>
+                  <Stop offset="1.0">
+                     <color>
+                        <Color red="0.6578947305679321" green="0.018274853006005287" blue="0.018274853006005287" />
+                     </color>
+                  </Stop>
+               </stops>
+            </LinearGradient>
+         </textFill></Label>
+      <Button fx:id="primaryButton" onAction="#switchToSecondary" text="Switch to Secondary View">
+         <font>
+            <Font name="Century Gothic" size="21.0" />
+         </font></Button>
+   </children>
+   <padding>
+      <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+   </padding>
+</VBox>
