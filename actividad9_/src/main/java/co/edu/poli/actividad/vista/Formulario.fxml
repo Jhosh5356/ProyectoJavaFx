@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.Group?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane prefHeight="520.0" prefWidth="720.0" xmlns="http://javafx.com/javafx/25"
+            xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="co.edu.poli.actividad.controller.FormularioControlador">
+
+   <children>
+      <!-- TÍTULO -->
+      <Label layoutX="270.0" layoutY="14.0" style="-fx-font-size: 18px; -fx-font-weight: bold;"
+             text="Registro de Monedas" />
+
+      <!-- CAMPOS DE DATOS PRINCIPALES -->
+      <TextField fx:id="txtId" layoutX="48.0" layoutY="60.0" prefWidth="180.0" promptText="ID Moneda" />
+      <TextField fx:id="txtValor" layoutX="48.0" layoutY="100.0" prefWidth="180.0" promptText="Valor nominal" />
+      <TextField fx:id="txtAnyo" layoutX="48.0" layoutY="140.0" prefWidth="180.0" promptText="Año de creación" />
+      <TextField fx:id="txtPrecioMercado" layoutX="48.0" layoutY="180.0" prefWidth="180.0" promptText="Precio en mercado" />
+
+      <!-- COMBOS RELACIONADOS -->
+      <ComboBox fx:id="cmbPais" layoutX="270.0" layoutY="60.0" prefWidth="180.0" promptText="País" />
+      <ComboBox fx:id="cmbEspecificacion" layoutX="270.0" layoutY="100.0" prefWidth="180.0" promptText="Especificación" />
+      <ComboBox fx:id="cmbColeccion" layoutX="270.0" layoutY="140.0" prefWidth="180.0" promptText="Colección" />
+
+      <!-- RADIOBUTTONS para conservación -->
+      <Group layoutX="270.0" layoutY="180.0">
+         <children>
+            <Label layoutY="2.0" text="Conservación:" />
+            <RadioButton fx:id="rbBuena" layoutX="100.0" text="Buena">
+               <toggleGroup>
+                  <ToggleGroup fx:id="grupoConservacion" />
+               </toggleGroup>
+            </RadioButton>
+            <RadioButton fx:id="rbRegular" layoutX="170.0" text="Regular" toggleGroup="$grupoConservacion" />
+            <RadioButton fx:id="rbMala" layoutX="250.0" text="Mala" toggleGroup="$grupoConservacion" />
+         </children>
+      </Group>
+
+      <fx:define>
+         <ToggleGroup fx:id="grupoConservacion" />
+      </fx:define>
+
+      <!-- CHECKBOXES de certificación -->
+      <Group layoutX="500.0" layoutY="60.0">
+         <children>
+            <Label text="Certificación:" />
+            <CheckBox fx:id="chkCertificada" layoutY="25.0" text="Certificada" />
+            <CheckBox fx:id="chkAutenticada" layoutY="50.0" text="Autenticada" />
+         </children>
+      </Group>
+
+      <!-- DESCRIPCIÓN -->
+      <TextArea fx:id="txtDescripcion" layoutX="48.0" layoutY="230.0" prefHeight="70.0" prefWidth="612.0"
+                promptText="Descripción o detalles adicionales de la moneda" />
+
+      <!-- TABLA DE MONEDAS -->
+      <TableView fx:id="tblMonedas" layoutX="48.0" layoutY="320.0" onMousePressed="#mostrarSeleccion"
+                 prefHeight="140.0" prefWidth="612.0">
+         <columns>
+            <TableColumn fx:id="colId" prefWidth="70.0" text="ID" />
+            <TableColumn fx:id="colValor" prefWidth="80.0" text="Valor" />
+            <TableColumn fx:id="colPais" prefWidth="90.0" text="País" />
+            <TableColumn fx:id="colColeccion" prefWidth="90.0" text="Colección" />
+            <TableColumn fx:id="colAnyo" prefWidth="70.0" text="Año" />
+            <TableColumn fx:id="colConservacion" prefWidth="100.0" text="Conservación" />
+            <TableColumn fx:id="colCertificacion" prefWidth="100.0" text="Certificación" />
+         </columns>
+      </TableView>
+
+      <!-- BOTONES -->
+      <Button fx:id="btnGuardar" layoutX="48.0" layoutY="480.0" onAction="#guardarMoneda"
+              prefWidth="120.0" text="Guardar" />
+      <Button fx:id="btnModificar" layoutX="188.0" layoutY="480.0" onAction="#modificarMoneda"
+              prefWidth="120.0" text="Modificar" />
+      <Button fx:id="btnEliminar" layoutX="328.0" layoutY="480.0" onAction="#eliminarMoneda"
+              prefWidth="120.0" text="Eliminar" />
+      <Button fx:id="btnSerializar" layoutX="468.0" layoutY="480.0" onAction="#serializarMonedas"
+              prefWidth="90.0" text="Serializar" />
+      <Button fx:id="btnDeserializar" layoutX="570.0" layoutY="480.0" onAction="#deserializarMonedas"
+              prefWidth="90.0" text="Deserializar" />
+   </children>
+</AnchorPane>
